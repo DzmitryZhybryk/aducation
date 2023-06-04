@@ -1,0 +1,14 @@
+def searh_binary(list_with_data: list, item: int):
+    first = 0
+    last = len(list_with_data) - 1
+    found_flag = False
+    while(first <= last and not found_flag):
+        mid = (first + last) // 2
+        if list_with_data[mid] == item:
+            found_flag = True
+        else:
+            if item < list_with_data[mid]:
+                last = mid - 1
+            else:
+                first = mid + 1
+    return found_flag

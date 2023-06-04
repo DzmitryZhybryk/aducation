@@ -1,0 +1,12 @@
+some_list = [1,2,3,4,5]
+
+lambda_filter = list(filter(lambda x: x > 2, some_list))
+lambda_square = list(map(lambda x: x ** 2, some_list))
+
+from functools import reduce
+
+def do_sum(x:int , y: int) -> int:
+    return x + y
+_sum = reduce(do_sum, some_list)
+or
+_sum = sum(some_list)

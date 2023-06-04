@@ -1,0 +1,33 @@
+Лучше всего использовать для больших объёмов данных
+
+def merge_sort(input_list: list):
+    if len(input_list) > 1:
+        mid = len(input_list) // 2
+        left = input_list[:mid]
+        right = input_list[mid:]
+
+        merge_sort(left)
+        merge_sort(right)
+
+        a, b, c = 0, 0, 0
+
+        while a < len(left) and b < len(right):
+            if left[a] < right[b]:
+                input_list[c] = left[a]
+                a = a + 1
+            else:
+                input_list[c] = right[b]
+                b = b + 1
+            c = c + 1
+
+        while a < len(left):
+            input_list[c] = left[a]
+            a = a + 1
+            c = c + 1
+
+        while b < len(right):
+            input_list[c] = right[b]
+            b = b + 1
+            c = c + 1
+
+    return input_list

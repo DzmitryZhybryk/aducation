@@ -1,0 +1,15 @@
+def shell_sort(input_list: list):
+    distance = len(input_list) // 2
+
+    while distance > 0:
+        for i in range(distance, len(input_list)):
+            temp = input_list[i]
+            j = i
+
+            while j >= distance and input_list[j - distance] > temp:
+                input_list[j] = input_list[j - distance]
+                j = j - distance
+            input_list[j] = temp
+
+        distance = distance // 2
+    return input_list
