@@ -36,3 +36,20 @@ Max + lambda
 a = {1: 3, 2: 2, 3: 1}
 result = max(a)  # найдет самый большой ключ
 result1 = max(a, key=lambda x: a[x])  # найдет самый большой value
+
+"""
+Reduce - функция, которая первым аргументом принимает в себя другую функцию (которая должна принимать в 
+себя два аргумента), и вторым аргументом принимает последовательность элементов.
+"""
+
+from functools import reduce
+
+
+def reducer_func(el_prev, el):
+    # el_prev — предшествующий элемент
+    # el — текущий элемент
+    return el_prev + el
+
+
+test = reduce(reducer_func, [1, 2, 3])  # 6
+print(test)
